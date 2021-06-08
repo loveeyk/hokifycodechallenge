@@ -1,6 +1,7 @@
 # hokifychallenge
 
-> This is the programming challenge for my application at Hokify. 
+> This is the programming challenge for my application at Hokify 👩‍💼 
+
 ## Project setup
 ```
 npm install
