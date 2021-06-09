@@ -1,14 +1,14 @@
 <template>
     <form class="form" @submit.prevent="validateForm" method="post">  
       <img src="../assets/logo_lovify.svg"/>
-      <p v-for="(error,i) in errors" :key="i">{{error}}</p>
+      <p class="error" v-for="(error,i) in errors" :key="i">{{error}}</p>
     <!-- <span>Homeview</span>   -->
-    <label>Vorname: </label>
-    <input v-model="vname" placeholder="Vorname">
-     <label>Nachname: </label>
-    <input v-model="nname" placeholder="Nachname">
-     <label>Email: </label>
-    <input v-model="email" placeholder="Email">
+    <label for="">Vorname: </label>
+    <input type="text" v-model="vname" placeholder="Vorname">
+     <label for="">Nachname: </label>
+    <input type="text" v-model="nname" placeholder="Nachname">
+     <label for="">Email: </label>
+    <input type="text" v-model="email" placeholder="Email">
     <input type="submit" value="submit"/>
   </form>
 </template>
@@ -27,7 +27,7 @@ validateForm(e:any){
   this.errors = [] //reset
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   
-  if(this.vname && this.nname && this.email) this.showAlert()
+  if(this.vname && this.nname && this.email && re.test(this.email)) this.showAlert()
 
   if(!this.vname) this.errors.push(this.errorString("vname"))  
   if(!this.nname) this.errors.push(this.errorString("nname"))
@@ -69,17 +69,25 @@ justify-content: center;
 align-items:center;
 height: 80vh;
 width: 100vw;
+
+.error{
+  font-size: 0.8rem;
+  color: red;
+  background: rgb(255, 221, 221);
+}
 img{
   width: 200px;
 }
 label{
   padding-top: 1rem;
 }
-input{
+input{  
+  &[type='text']{
   padding: 0.5rem;
   width: 300px;
-}
-  button{
+  }
+
+  &[type='submit']{
     background: #027f7e;
     color: white;
     padding: 1rem;
@@ -88,9 +96,12 @@ input{
     border-radius: 5px;
     cursor: pointer;
      margin: 1rem;   
-  }button:hover{
-      background: #10b0af;
+
+     &:hover{
+    background: #10b0af;
       transition: 0.5s ease-in-out;
-    }
+     }
+  }
+}
 }
 </style>
