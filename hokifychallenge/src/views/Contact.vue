@@ -1,10 +1,11 @@
 <template>
     <div class="form">  
+      <img src="../assets/logo_lovify.svg"/>
     <!-- <span>Homeview</span>   -->
     <label>Vorname: </label>
-    <input v-model="text" placeholder="Vorname">
+    <input v-model="vname" placeholder="Vorname">
      <label>Nachname: </label>
-    <input v-model="text" placeholder="Nachname">
+    <input v-model="nname" placeholder="Nachname">
      <label>Email: </label>
     <input v-model="email" placeholder="Email">
     <button @click="openWindow">Senden</button>
@@ -17,10 +18,12 @@ import { Vue } from "vue-class-component";
 
 export default class Contact extends Vue{
 
-openWindow(){
-  alert("Hallo Loveleen Karir bei Hokify")
+vname = ""
+nname = ""
+email = ""
 
-  return 1
+  openWindow():void{
+  alert("Hallo " + this.vname + " " + this.nname + " bei Hokify!");
 }
 }
 
@@ -32,8 +35,11 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items:center;
-height: 100vh;
-
+height: 80vh;
+width: 100vw;
+img{
+  width: 200px;
+}
 label{
   padding-top: 1rem;
 }
@@ -45,12 +51,14 @@ input{
     background: #027f7e;
     color: white;
     padding: 1rem;
+    border: 1px solid #cafcfc;
+    box-shadow: 1px 2px 8px #96ffff;
     border-radius: 5px;
     cursor: pointer;
-     border: 1px solid transparent;
-    
+     margin: 1rem;   
   }button:hover{
       background: #10b0af;
+      transition: 0.5s ease-in-out;
     }
 }
 </style>
