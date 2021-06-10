@@ -14,12 +14,17 @@
 
 <script lang="ts">
 import { Vue } from "vue-class-component";
+import Swal from 'sweetalert2'
+
+
 export default class Contact extends Vue {
 
     vname = ""
     nname = ""
     email = ""
     errors: Array < string > = []
+  swal: any;
+  $swal: any;
 /**
  * check form input validation
  */
@@ -54,7 +59,12 @@ export default class Contact extends Vue {
         return "Bitte geben Sie " + toReturn + " an!"
     }
     showAlert(): void {
-        alert("Hallo " + this.vname + " " + this.nname + " bei Hokify!");
+       Swal.fire({
+          title: "Willkommen!",
+          text: "Hallo " + this.vname + " " + this.nname + " bei Hokify!", 
+          confirmButtonColor: '#027f7e', 
+          background: '#cafcfcd1'
+         });
     }
 }
 </script>
