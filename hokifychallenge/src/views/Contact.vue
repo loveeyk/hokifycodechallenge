@@ -1,15 +1,21 @@
 <template>
 <form class="form" @submit.prevent="validateForm" method="post">
     <img src="../assets/logo_lovify.svg" />
-    <p class="error" v-for="(error,i) in errors" :key="i">{{error}}</p>
-    <label for="">Vorname: </label>
-    <input type="text" v-model="vname" placeholder="Vorname">
-    <label for="">Nachname: </label>
-    <input type="text" v-model="nname" placeholder="Nachname">
-    <label for="">Email: </label>
-    <input type="text" v-model="email" placeholder="Email">
-    <input type="submit" value="Absenden" />
+    <div class="form_wrapper">
+        <div class="labelTag">
+            <label for="">*Vorname: </label>
+            <label for="">*Nachname: </label>
+            <label for="">*Email: </label></div>
+        <div class="inputWrapper"> <input type="text" v-model="vname">
+            <input type="text" v-model="nname">
+            <input type="text" v-model="email">
+            <input type="submit" value="Absenden" />
+        </div>
+    </div>
 </form>
+<div class="err" v-if="errors.length > 0">
+    <p class="error" v-for="(error,i) in errors" :key="i">{{error}}</p>
+</div>
 </template>
 
 <script lang="ts">
@@ -75,6 +81,21 @@ img {
     width: 135px;
 }
 
+.err {
+    border: 1px solid $color_alert;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.error {
+    font-size: 0.8rem;
+    color: $color_alert;
+    margin: 0.5rem;
+    text-align: center;
+
+}
+
 .form {
     display: flex;
     flex-direction: column;
@@ -82,36 +103,44 @@ img {
     align-items: center;
     padding-top: 0.5rem;
     height: 100%;
-
-    .error {
-        font-size: 0.8rem;
-        color: $color_alert;
-        margin: 0.5rem;
-    }
-
-    label {
-        padding-top: 0.5rem;
-    }
-
-    input {
-        &[type='text'] {
-            padding: 0.5rem;
-            width: 300px;
-            border-radius: 5px;
+    .form_wrapper {
+        position: relative;
+        .labelTag {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: -20px;
+            label {
+                background: $accent_colorLight;
+                margin: 1.6rem;
+                font-size: smaller;
+            }
         }
+        .inputWrapper {
+            display: flex;
+            flex-direction: column;
 
-        &[type='submit'] {
-            background: $color_blue;
-            color: $accent_colorLight;
-            padding: 0.5rem;
-            border: 1px solid $accent_colorLight;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 1rem;
-
-            &:hover {
-                background: #6dadf1c9;
-                transition: 0.5s ease-in-out;
+            input {
+                &[type='text'] {
+                    padding: 0.5rem;
+                    width: 300px;
+                    border-radius: 5px;
+                    border-width: 1px;
+                    margin: 1rem;
+                }
+                &[type='submit'] {
+                    background: $color_blue;
+                    color: $accent_colorLight;
+                    padding: 0.5rem;
+                    border: 1px solid $accent_colorLight;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    margin: 1rem;
+                    &:hover {
+                        background: #6dadf1c9;
+                        transition: 0.5s ease-in-out;
+                    }
+                }
             }
         }
     }
