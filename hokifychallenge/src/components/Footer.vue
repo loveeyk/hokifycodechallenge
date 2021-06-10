@@ -22,7 +22,7 @@ export default class Footer extends Vue {
 @import 'src/assets/colors.scss';
 
 .footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     background: $color;
     color: $accent_colorLight;
