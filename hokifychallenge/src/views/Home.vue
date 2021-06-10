@@ -27,7 +27,7 @@ export default class Home extends Vue {
     height: 100vh;
     a {
         padding: 1rem;
-        background: $color;
+        background: $color_blue;
         color: $accent_colorLight;
         text-decoration: none;
         border: 1px solid $highlight_light;

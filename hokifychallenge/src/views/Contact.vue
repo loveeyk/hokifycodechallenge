@@ -71,23 +71,25 @@ export default class Contact extends Vue {
 
 <style lang="scss">
 @import 'src/assets/colors.scss';
+img {
+        width: 135px;
+    }
 .form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
+    padding-top: 0.5rem;
+    height: 100%;
+    
     .error {
         font-size: 0.8rem;
         color: $accent_colorDark;
         margin: 0.5rem;
     }
-    img {
-        width: 200px;
-    }
+    
     label {
-        padding-top: 1rem;
+        padding-top: 0.5rem;
     }
     input {
         &[type='text'] {
@@ -97,7 +99,7 @@ export default class Contact extends Vue {
         &[type='submit'] {
             background: $color_dark;
             color: $accent_colorLight;
-            padding: 1rem;
+            padding: 0.5rem;
             border: 1px solid #cafcfc;
             box-shadow: 1px 2px 8px #96ffff;
             border-radius: 5px;
