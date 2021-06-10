@@ -1,9 +1,9 @@
 <template>
   <HeroVue path="../assets/logo_lovify.svg"/>
   <div class="home">  
-   <h1>Willkommen auf Lovify.</h1>
+   <h1>{{msg}}</h1>
      <!-- <img src="../assets/logo_lovify.svg" alt="logo" /> -->
-  <a href="contact">Click Me</a>
+  <a href="contact">Kontaktaufnahme</a>
 
   </div>
 </template>
@@ -16,13 +16,14 @@ import { Options, Vue } from 'vue-class-component';
   },
 })
 export default class Home extends Vue {
-
+msg = "Willkommen bei Lovify"
    
    
 }
 </script>
 
 <style lang="scss">
+@import 'src/assets/colors.scss';
 .home{
   display: flex;
   justify-content: space-around;
@@ -31,11 +32,11 @@ export default class Home extends Vue {
   height: 70vh;
   a{
     padding: 1rem;
-    background: #10b0af;
-    color: white;
+    background: $color;
+    color: $accent_colorLight;
     text-decoration: none;
-    border: 1px solid #cafcfc;
-    box-shadow: 1px 2px 8px #96ffff;
+    border: 1px solid $highlight_light;
+    box-shadow: 1px 2px 8px $color_light;
     border-radius: 5px;
   }
 }

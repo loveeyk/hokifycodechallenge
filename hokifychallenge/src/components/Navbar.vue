@@ -15,22 +15,23 @@ import { Options, Vue } from 'vue-class-component'
 
 export default class Navbar extends Vue {
 
-links:any = [{name: "Home", path:"/"}, {name: "Contact", path: "/contact"}];
+links:any = [{name: "Home", path:"/"}, {name: "Kontakt", path: "/contact"}];
 
 
 }
 </script>
 
 <style lang="scss">
-
+@import 'src/assets/colors.scss';
 .navbar{
     display: flex;
-    background: #10b0af;
-    color: white;
+    background: $color;
+    color: $accent_colorLight;
     list-style: none;
-    box-shadow: 1px 3px 15px #54ffff;
+    box-shadow: 1px 3px 15px $highlight;
     padding: 0.5rem;
     width: 100%;
+    overflow: hidden;
 
     img{
         
@@ -45,7 +46,7 @@ links:any = [{name: "Home", path:"/"}, {name: "Contact", path: "/contact"}];
 
         
         a{
-        color: white;
+        color: $accent_colorLight;
         text-decoration: none;
     
         }

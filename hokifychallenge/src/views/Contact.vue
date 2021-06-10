@@ -1,6 +1,7 @@
 <template>
     <form class="form" @submit.prevent="validateForm" method="post">  
       <img src="../assets/logo_lovify.svg"/>
+    
       <p class="error" v-for="(error,i) in errors" :key="i">{{error}}</p>
     <!-- <span>Homeview</span>   -->
     <label for="">Vorname: </label>
@@ -9,7 +10,7 @@
     <input type="text" v-model="nname" placeholder="Nachname">
      <label for="">Email: </label>
     <input type="text" v-model="email" placeholder="Email">
-    <input type="submit" value="submit"/>
+    <input type="submit" value="Absenden"/>
   </form>
 </template>
 
@@ -62,18 +63,18 @@ showAlert():void{
 </script>
 
 <style lang="scss">
+@import 'src/assets/colors.scss';
 .form{
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items:center;
-height: 80vh;
+height: 100vh;
 width: 100vw;
-
-.error{
+  .error{
   font-size: 0.8rem;
-  color: red;
-  background: rgb(255, 221, 221);
+  color: $accent_colorDark;
+  margin: 0.5rem;
 }
 img{
   width: 200px;
@@ -88,8 +89,8 @@ input{
   }
 
   &[type='submit']{
-    background: #027f7e;
-    color: white;
+    background: $color_dark;
+    color: $accent_colorLight;
     padding: 1rem;
     border: 1px solid #cafcfc;
     box-shadow: 1px 2px 8px #96ffff;
@@ -98,7 +99,7 @@ input{
      margin: 1rem;   
 
      &:hover{
-    background: #10b0af;
+    background: $color;
       transition: 0.5s ease-in-out;
      }
   }
