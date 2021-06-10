@@ -110,6 +110,7 @@ img {
 
     .form_wrapper {
         position: relative;
+        text-align: center;
 
         .labelWrapper {
             position: relative;
