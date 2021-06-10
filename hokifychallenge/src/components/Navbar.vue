@@ -4,7 +4,6 @@
     <li v-for="(link,index) in links" :key="index">
         <router-link :to="link.path">{{link.name}}</router-link>
     </li>
-    <Icons />
    
 </ul>
 </template>
@@ -26,14 +25,16 @@ export default class Navbar extends Vue {
 <style lang="scss">
 @import 'src/assets/colors.scss';
 .navbar {
+    position:absolute;
     display: flex;
     background: $color;
     color: $accent_colorLight;
     list-style: none;
-    box-shadow: 1px 3px 15px $highlight;
+    box-shadow: 1px 3px 1px $shadow;
     padding: 0.2rem;
     width: 100%;
     overflow: hidden;
+    flex-wrap: wrap;
     img {
         width: 80px;
     }
