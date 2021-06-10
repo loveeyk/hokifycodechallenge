@@ -24,5 +24,14 @@ export default class Icons extends Vue {
 </script>
 
 <style lang="scss">
+.icons{
+    display: flex;
 
+    align-items: center;
+    margin-left: auto;
+    i{
+        font-size: 1.5;
+        padding: 0 0.5rem;
+    }
+}
 </style>
