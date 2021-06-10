@@ -23,11 +23,11 @@ export default class Navbar extends Vue {
     color: $accent_colorLight;
     list-style: none;
     box-shadow: 1px 3px 15px $highlight;
-    padding: 0.5rem;
+    padding: 0.2rem;
     width: 100%;
     overflow: hidden;
     img {
-        width: 100px;
+        width: 80px;
     }
     li {
         display: inline-flex;
