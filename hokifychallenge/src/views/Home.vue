@@ -1,8 +1,6 @@
 <template>
-<HeroVue path="../assets/logo_lovify.svg" />
 <div class="home">
     <h1>{{msg}}</h1>
-    <!-- <img src="../assets/logo_lovify.svg" alt="logo" /> -->
     <a href="contact">Kontaktaufnahme</a>
 </div>
 </template>
@@ -22,10 +20,11 @@ export default class Home extends Vue {
 @import 'src/assets/colors.scss';
 .home {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
-    height: 70vh;
+    text-align: center;
+    height: 100vh;
     a {
         padding: 1rem;
         background: $color;
