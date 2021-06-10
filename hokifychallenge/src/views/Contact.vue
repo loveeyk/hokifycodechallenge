@@ -95,6 +95,7 @@ img {
         &[type='text'] {
             padding: 0.5rem;
             width: 300px;
+            border-radius: 5px;
         }
         &[type='submit'] {
             background: $color_blue;
