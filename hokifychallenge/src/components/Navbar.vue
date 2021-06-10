@@ -25,7 +25,6 @@ export default class Navbar extends Vue {
 <style lang="scss">
 @import 'src/assets/colors.scss';
 .navbar {
-    position:absolute;
     display: flex;
     background: $color;
     color: $accent_colorLight;
