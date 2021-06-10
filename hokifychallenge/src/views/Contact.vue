@@ -84,7 +84,7 @@ img {
     
     .error {
         font-size: 0.8rem;
-        color: $accent_colorDark;
+        color: $color_alert;
         margin: 0.5rem;
     }
     
@@ -97,16 +97,15 @@ img {
             width: 300px;
         }
         &[type='submit'] {
-            background: $color_dark;
+            background: $color_blue;
             color: $accent_colorLight;
             padding: 0.5rem;
-            border: 1px solid #cafcfc;
-            box-shadow: 1px 2px 8px #96ffff;
+            border: 1px solid $accent_colorLight;
             border-radius: 5px;
             cursor: pointer;
             margin: 1rem;
             &:hover {
-                background: $color;
+                background: #6dadf1c9;
                 transition: 0.5s ease-in-out;
             }
         }
