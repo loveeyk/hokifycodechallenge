@@ -4,12 +4,20 @@
     <li v-for="(link,index) in links" :key="index">
         <router-link :to="link.path">{{link.name}}</router-link>
     </li>
+    <Icons />
+   
 </ul>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component'
+import { Options, Vue } from 'vue-class-component';
+import Icons from '../components/Icons.vue';
 
+@Options({
+  components: {
+    Icons,
+  },
+})
 export default class Navbar extends Vue {
     links: any = [{ name: "Home", path: "/" }, { name: "Kontakt", path: "/contact" }];
 }
