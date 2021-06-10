@@ -16,18 +16,17 @@
 import { Vue } from "vue-class-component";
 import Swal from 'sweetalert2'
 
-
 export default class Contact extends Vue {
 
     vname = ""
     nname = ""
     email = ""
     errors: Array < string > = []
-  swal: any;
-  $swal: any;
-/**
- * check form input validation
- */
+    swal: any;
+    $swal: any;
+    /**
+     * check form input validation
+     */
     validateForm(e: any) {
         this.errors = [] //reset
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -59,21 +58,23 @@ export default class Contact extends Vue {
         return "Bitte geben Sie " + toReturn + " an!"
     }
     showAlert(): void {
-       Swal.fire({
-          title: "Willkommen!",
-          text: "Hallo " + this.vname + " " + this.nname + " bei Hokify!", 
-          confirmButtonColor: '#027f7e', 
-          background: '#cafcfcd1'
-         });
+        Swal.fire({
+            title: "Willkommen!",
+            text: "Hallo " + this.vname + " " + this.nname + " bei Hokify!",
+            confirmButtonColor: '#027f7e',
+            background: '#cafcfcd1'
+        });
     }
 }
 </script>
 
 <style lang="scss">
 @import 'src/assets/colors.scss';
+
 img {
-        width: 135px;
-    }
+    width: 135px;
+}
+
 .form {
     display: flex;
     flex-direction: column;
@@ -81,22 +82,24 @@ img {
     align-items: center;
     padding-top: 0.5rem;
     height: 100%;
-    
+
     .error {
         font-size: 0.8rem;
         color: $color_alert;
         margin: 0.5rem;
     }
-    
+
     label {
         padding-top: 0.5rem;
     }
+
     input {
         &[type='text'] {
             padding: 0.5rem;
             width: 300px;
             border-radius: 5px;
         }
+
         &[type='submit'] {
             background: $color_blue;
             color: $accent_colorLight;
@@ -105,6 +108,7 @@ img {
             border-radius: 5px;
             cursor: pointer;
             margin: 1rem;
+
             &:hover {
                 background: #6dadf1c9;
                 transition: 0.5s ease-in-out;
