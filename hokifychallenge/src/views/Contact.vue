@@ -3,7 +3,6 @@
       <img src="../assets/logo_lovify.svg"/>
     
       <p class="error" v-for="(error,i) in errors" :key="i">{{error}}</p>
-    <!-- <span>Homeview</span>   -->
     <label for="">Vorname: </label>
     <input type="text" v-model="vname" placeholder="Vorname">
      <label for="">Nachname: </label>
