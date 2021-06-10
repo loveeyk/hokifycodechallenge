@@ -20,7 +20,9 @@ export default class Contact extends Vue {
     nname = ""
     email = ""
     errors: Array < string > = []
-
+/**
+ * check form input validation
+ */
     validateForm(e: any) {
         this.errors = [] //reset
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
